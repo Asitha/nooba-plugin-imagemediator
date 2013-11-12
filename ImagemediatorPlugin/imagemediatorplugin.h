@@ -29,6 +29,7 @@ public slots:
      * These functions will be called when the parameters are changed by the
      * user.
      */
+    void inputData(const PluginPassData &data);
 //    void onIntParamChanged(const QString& varName, int val);
 //    void onDoubleParamChanged(const QString& varName, double val);
 //    void onStringParamChanged(const QString& varName, const QString& val);
@@ -39,7 +40,7 @@ private:
      \brief get a color QImage from cv::Mat
      \return QImage with three color channels
      */
-    inline QImage convertToQImage(cv::Mat &cvImg);
+    inline QImage convertToQImage(const cv::Mat &cvImg);
 
 };
 
