@@ -1,5 +1,6 @@
 #include "imagemediatorplugin.h"
 #include <QtCore>
+#include <QtGui/QImage>
 #include <opencv2/core/core.hpp>
 
 ImagemediatorPlugin::ImagemediatorPlugin()
