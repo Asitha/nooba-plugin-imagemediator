@@ -48,7 +48,7 @@ void ImagemediatorPlugin::inputData(const PluginPassData &data)
     emit outputData(data);
 }
 
-QImage ImagemediatorPlugin::convertToQImage(cv::Mat &cvImg)
+QImage ImagemediatorPlugin::convertToQImage(const cv::Mat &cvImg)
 {
     return QImage((const unsigned char*)(cvImg.data),
                 cvImg.cols,cvImg.rows,cvImg.step,  QImage::Format_RGB888);

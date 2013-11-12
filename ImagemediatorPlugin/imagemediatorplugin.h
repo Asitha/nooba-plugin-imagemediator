@@ -39,7 +39,7 @@ private:
      \brief get a color QImage from cv::Mat
      \return QImage with three color channels
      */
-    inline QImage convertToQImage(cv::Mat &cvImg);
+    inline QImage convertToQImage(const cv::Mat &cvImg);
 
 };
 
