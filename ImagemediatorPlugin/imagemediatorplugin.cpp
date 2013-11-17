@@ -18,13 +18,16 @@ bool ImagemediatorPlugin::procFrame( const cv::Mat &in, cv::Mat &out, ProcParams
     Q_UNUSED(params)
     PluginPassData data;
     out = in;
-    data.setImage(convertToQImage(in));
+    data.setImage(convertToQImage(out));
+
     emit outputData(data);
     return true;
 }
 
 bool ImagemediatorPlugin::init()
 {
+    //void createFrameViewer(const QString& title)
+    createFrameViewer("TestOP");
     return true;
 }
 
@@ -46,7 +49,10 @@ PluginInfo ImagemediatorPlugin::getPluginInfo() const
 
 void ImagemediatorPlugin::inputData(const PluginPassData &data)
 {
-    emit outputData(data);
+
+    updateFrameViewer("TestOP",data.getImage());
+
+    //emit outputData(data);
 }
 
 QImage ImagemediatorPlugin::convertToQImage(const cv::Mat &cvImg)
